@@ -1,16 +1,16 @@
-import ProductGrid from "@/components/ProductGrid";
 import PageHero from "@/components/PageHero";
+import FilteredCatalog from "@/components/FilteredCatalog"; // Importamos el nuevo buscador
 import { getAllGames } from "@/lib/catalog";
 
 export const dynamic = "force-dynamic";
 
 export default async function IndividualesPage({ params }) {
-  // SOLUCIÓN: Esperamos a que los params carguen antes de usarlos
   const resolvedParams = await params;
   const platformParam = resolvedParams.platform?.toLowerCase(); 
   
   const allGames = await getAllGames();
 
+  // Filtramos primero por plataforma desde el servidor
   const products = allGames.filter((game) => {
     const isIndividual = game.type === "Individual";
     let isCorrectPlatform = false;
@@ -36,7 +36,8 @@ export default async function IndividualesPage({ params }) {
         description={`Explora nuestro catálogo de juegos digitales para ${titleName}. Entrega inmediata y soporte garantizado.`}
       />
       <div className="max-w-7xl mx-auto px-6 md:px-10 mt-10">
-        <ProductGrid products={products} />
+        {/* Le pasamos los juegos al nuevo componente en lugar del ProductGrid directo */}
+        <FilteredCatalog initialProducts={products} />
       </div>
     </main>
   );

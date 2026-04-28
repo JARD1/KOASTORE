@@ -15,7 +15,7 @@ export default function ProductGrid({ products }) {
 
   // 2. Si pasa la prueba, dibujamos la cuadrícula normal
   return (
-    <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+    <div className="grid grid-cols-2 gap-3 md:gap-6 md:grid-cols-3 xl:grid-cols-4">
       {products.map((product) => (
         <ProductCard key={product.id} product={product} />
       ))}
