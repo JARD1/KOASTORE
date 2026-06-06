@@ -61,7 +61,7 @@ export default async function ExperienciasPage() {
     <main className="pb-24">
       <PageHero
         eyebrow="Comunidad"
-        title="Experiencias GameOver"
+        title="Experiencias KoaStore"
         description="Lo que dicen nuestros clientes tras su instalación. Sin filtros, captures reales de nuestra atención diaria."
         primaryAction={{ href: "/contacto", label: "Sé el próximo" }}
         secondaryAction={{ href: "/", label: "Volver a la tienda" }}

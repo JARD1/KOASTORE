@@ -5,8 +5,12 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata = {
-  title: "GameOver",
+  title: "KoaStore - Digital Games Store",
   description: "Digital Games Store",
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
 };
 
 export const viewport = {
@@ -44,8 +48,8 @@ export default function RootLayout({ children }) {
                       
                       <div className="relative h-28 w-28 md:h-30 md:w-30 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-[5deg]">
                         <Image
-                          src="/LogoWebGameOver1.png" 
-                          alt="GameOver Logo"
+                          src="/NuevoLogo.png" 
+                          alt="KoaStore Logo"
                           fill
                           className="object-contain drop-shadow-[0_0_12px_rgba(168,85,247,0.7)]"
                           priority
@@ -55,7 +59,7 @@ export default function RootLayout({ children }) {
 
                     <div className="flex flex-col leading-none">
                       <span className="font-display text-lg md:text-xl uppercase tracking-[0.25em] text-white drop-shadow-neon">
-                        GameOver
+                        KoaStore
                       </span>
                       <span className="mt-1 text-[9px] md:text-[10px] uppercase tracking-[0.4em] text-neonSoft">
                         Digital Games Store
@@ -80,7 +84,7 @@ export default function RootLayout({ children }) {
                 <div className="flex flex-col items-center gap-4">
                   <div className="h-px w-12 bg-neon/50" />
                   <p className="text-[10px] uppercase tracking-[0.3em] text-muted/60">
-                    © {new Date().getFullYear()} GameOver Continue • Caracas, Venezuela
+                    © {new Date().getFullYear()} KoaStore • Caracas, Venezuela
                   </p>
                   <div className="flex gap-6 text-[9px] uppercase tracking-widest text-muted/40">
                     <span className="hover:text-neon transition-colors cursor-default">PS4</span>

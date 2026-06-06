@@ -31,9 +31,26 @@ export default async function HomePage() {
       {/* FONDO ANIMADO DE CHAMPIÑONES */}
       <BackgroundParticles />
 
-      {/* 1. HERO CON GLOW MÁGICO DE FONDO */}
-      <div className="relative z-10">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-[500px] bg-purple-900/30 blur-[120px] rounded-full pointer-events-none" />
+      {/* 1. CATÁLOGO DESTACADO (AHORA DE PRIMERO) */}
+      {/* Agregamos pt-32 para que no quede escondido detrás del menú superior */}
+      <section className="relative pt-32 pb-16 z-10">
+        {/* Un brillo azul/morado sutil de fondo para resaltar esta primera sección */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-[400px] bg-purple-900/30 blur-[120px] rounded-full pointer-events-none" />
+        
+        <div className="max-w-7xl mx-auto px-6 md:px-10 relative z-10">
+          <SectionHeader
+            eyebrow="TENDENCIAS"
+            title="DESTACADOS DE LA SEMANA"
+            description="Los títulos que están rompiendo récords. No te quedes fuera de la conversación."
+          />
+        </div>
+        <div className="mt-8 relative z-20">
+          <ProductCarousel products={featuredGames} />
+        </div>
+      </section>
+
+      {/* 2. MENSAJE PRINCIPAL Y TRUST BADGES (EN SEGUNDO LUGAR) */}
+      <div className="relative z-10 border-t border-white/5 bg-black/40 backdrop-blur-sm pt-10">
         
         <PageHero
           eyebrow="¡ PRESS START !"
@@ -43,8 +60,8 @@ export default async function HomePage() {
           secondaryAction={{ href: "/individuales/ps5", label: "Catálogo PS5" }}
         />
 
-        {/* 🔥 TRUST BADGES (NUEVO DISEÑO: TARJETAS FLOTANTES) 🔥 */}
-        <div className="relative z-20 max-w-6xl mx-auto px-6 -mt-8 md:-mt-12 mb-20 animate-in slide-in-from-bottom-8 fade-in duration-1000 delay-300">
+        {/* 🔥 TRUST BADGES (TARJETAS FLOTANTES) 🔥 */}
+        <div className="relative z-20 max-w-6xl mx-auto px-6 -mt-8 md:-mt-12 mb-16 animate-in slide-in-from-bottom-8 fade-in duration-1000 delay-300">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 
             {/* Tarjeta 1: Entrega Inmediata (Amarillo) */}
@@ -93,32 +110,18 @@ export default async function HomePage() {
         </div>
       </div>
 
-      {/* 2. CATÁLOGO DESTACADO */}
-      <section className="relative py-20 border-y border-white/5 bg-black/40 backdrop-blur-sm z-10">
-        <div className="max-w-7xl mx-auto px-6 md:px-10 relative z-10">
-          <SectionHeader
-            eyebrow="TENDENCIAS"
-            title="DESTACADOS DE LA SEMANA"
-            description="Los títulos que están rompiendo récords. No te quedes fuera de la conversación."
-          />
-        </div>
-        <div className="mt-12 relative z-20">
-          <ProductCarousel products={featuredGames} />
-        </div>
-      </section>
-
-      {/* 3. CÓMO COMPRAR */}
-      <div className="relative z-10 bg-black/80 backdrop-blur-md pt-10">
-        <HowItWorks />
-      </div>
-
-      {/* 4. NAVEGACIÓN POR CATEGORÍAS */}
-      <section className="py-24 relative z-10">
+      {/* 3. NAVEGACIÓN POR CATEGORÍAS */}
+      <section className="py-20 relative z-10 border-t border-white/5">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-3xl h-[400px] bg-blue-900/10 blur-[120px] rounded-full pointer-events-none" />
         <div className="relative z-10">
           <CategoryCards />
         </div>
       </section>
+
+      {/* 4. CÓMO COMPRAR */}
+      <div className="relative z-10 bg-black/80 backdrop-blur-md pt-10 pb-20 border-t border-white/5">
+        <HowItWorks />
+      </div>
       
     </main>
   );

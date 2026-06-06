@@ -8,7 +8,7 @@ export default function ProductCard({ product }) {
   const bannerText = bannerMatch ? bannerMatch[0] : null;
 
   const mensajeWhatsapp = encodeURIComponent(
-    `🎮 *¡Hola, GameOver!* \n\n` +
+    `🎮 *¡Hola, KoaStore!* \n\n` +
     `Me interesa adquirir el siguiente título/pack:\n` +
     `📦 *${product.title}*\n` +
     `💰 *Precio:* ${product.price}€\n\n` +

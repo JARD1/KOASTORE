@@ -6,12 +6,12 @@ import Link from "next/link";
 
 export default function ContactoPage() {
   const generalContactLink = buildWhatsAppLink("584242518228", {
-    title: "Catálogo General de GameOver"
+    title: "Catálogo General de KoaStore",
   });
   
   // 🔴 AQUÍ DEBES PONER TUS LINKS REALES DE REDES SOCIALES
-  const facebookLink = "https://www.facebook.com/"; 
-  const instagramLink = "https://www.instagram.com/";
+  const facebookLink = "https://www.facebook.com/profile.php?id=61589269877349"; 
+  const instagramLink = "https://www.instagram.com/koastore19/";
 
   return (
     <main className="min-h-screen bg-black overflow-hidden relative">
